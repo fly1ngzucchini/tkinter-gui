@@ -1,3 +1,11 @@
+"""
+todos::
+learn how to get data from rasp pi into python
+    (it's in C)
+have camera feed displayed in bg of gui
+    maybe w crosshair
+streamline program
+"""
 from tkinter import *
 
 class FullScreenApp(object):
