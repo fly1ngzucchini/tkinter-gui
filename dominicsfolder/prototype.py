@@ -1,4 +1,3 @@
-//real fast change to commit
 from tkinter import *
 
 class FullScreenApp(object):
@@ -40,8 +39,8 @@ top_right_frame.pack(side=RIGHT)
 top_left_frame = Frame(top_frame)
 top_left_frame.pack(side=LEFT)
 
-bottom_frame = Frame()
-bottom_frame.pack(side=BOTTOM, fill=Y)
+#bottom_frame = Frame()
+#bottom_frame.pack(side=BOTTOM, fill=Y)
 
 while True:
     root.update()
@@ -55,12 +54,14 @@ while True:
     aim_number = str(x)
 
     target = Label(top_left_frame, fg=color, text='Target = ' + target_number)
-    target.config(font=('Courier', 44))
+    target.config(font=('Comic-Sans', 44))
     target.grid(row=0, column=0)
+    #target.pack()
 
     aim = Label(top_right_frame, fg=color, text='Current = ' + aim_number)
     aim.config(font=('Courier', 44))
     aim.grid(row=0, column=0)
+    #aim.pack()
 
 #main loop
 root.mainloop()
