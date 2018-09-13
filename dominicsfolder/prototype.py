@@ -7,8 +7,27 @@ have camera feed displayed in bg of gui
 streamline program
 """
 import tkinter as tk
-from tkinter import *
+#from tkinter import *
 root = tk.Tk()
+
+root.bind('<Escape>', lambda e: root.destroy())
+
+#w = tk.Label(root, text="Hello world")
+#w.pack() #tells tkinter to fit the size of the window to text
+
+counter = 0
+def counter_label_left(label):
+    def count():
+        global counter
+        counter +=1
+        label.config(text = "target = " + str(counter))
+        label.after(1, count)
+    count()
+
+root.title("test")
+label = tk.Label(root, fg="green")
+label.pack()
+counter_label_left(label)
 
 
 """
