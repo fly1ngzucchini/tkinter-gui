@@ -6,8 +6,12 @@ have camera feed displayed in bg of gui
     maybe w crosshair
 streamline program
 """
+import tkinter as tk
 from tkinter import *
+root = tk.Tk()
 
+
+"""
 class FullScreenApp(object):
     def __init__(self, master, **kwargs):
         self.master = master
@@ -22,7 +26,7 @@ class FullScreenApp(object):
         else:
             self._fullscreen = True
 
-root = Tk()
+
 w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 app = FullScreenApp(root)
 
@@ -70,6 +74,6 @@ while True:
     aim.config(font=('Courier', 44))
     aim.grid(row=0, column=0)
     #aim.pack()
-
+"""
 #main loop
 root.mainloop()
