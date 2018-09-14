@@ -8,6 +8,7 @@ streamline program
 """
 import tkinter as tk
 #from tkinter import *
+from tkinter import Label
 root = tk.Tk()
 
 root.bind('<Escape>', lambda e: root.destroy())
@@ -16,15 +17,21 @@ root.bind('<Escape>', lambda e: root.destroy())
 #w.pack() #tells tkinter to fit the size of the window to text
 
 counter = 0
-def counter_label_left(label):
-    def count():
-        global counter
-        counter +=1
-        label.config(text = "target = " + str(counter))
-        label.after(1, count)
-    count()
+def count():
+    global counter
+    counter +=1
 
-root.title("test")
+def counter_label_left(label):
+    label.config(text = "target = " + str(counter))
+    label.after(1, count)
+    count()
+def counter_label_right(label):
+    label.config( text = "current = " + str(counter))
+    label.after(1,count)
+    count()
+root.title("proto toto type")
+label = tk.Label(root, fg="green")
+label.pack(padx=50, side=tk.LEFT)
 label = tk.Label(root, fg="green")
 label.pack()
 counter_label_left(label)
@@ -84,12 +91,12 @@ while True:
     target_number = str(x)
     aim_number = str(x)
 
-    target = Label(top_left_frame, fg=color, text='Target = ' + target_number)
-    target.config(font=('Comic-Sans', 44))
+    target = Label( fg=color, text='Target = ' + target_number)
+    target.config(font=('Courier', 44))
     target.grid(row=0, column=0)
     #target.pack()
 
-    aim = Label(top_right_frame, fg=color, text='Current = ' + aim_number)
+    aim = Label( fg=color, text='Current = ' + aim_number)
     aim.config(font=('Courier', 44))
     aim.grid(row=0, column=0)
     #aim.pack()
