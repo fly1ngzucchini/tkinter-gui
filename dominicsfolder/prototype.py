@@ -21,7 +21,7 @@ def counter_label_left(label):
     def count():
         global counter
         counter += 1
-        label.config(text = str(counter))
+        label.config(text = "Target: " + str(counter))
         label.after(1, count)
     count()
 
@@ -29,7 +29,7 @@ def counter_label_right(label):
     def count():
         global counter
         counter += 1
-        label.config(text = str(counter))
+        label.config(text = "Current: " + str(counter))
         label.after(1, count)
     count()
 
@@ -38,10 +38,10 @@ def text(label):
     label.pack(padx=50, side=tk.LEFT)
 
 root.title("proto toto type")
-l = tk.Label(root, fg="green")
-l.pack(padx=50, side=tk.LEFT)
-r = tk.Label(root, fg="green")
-r.pack(side=tk.LEFT)
+l = tk.Label(root, text="", fg="green")
+l.pack(padx=5, side=tk.LEFT)
+r = tk.Label(root, text="", fg="green")
+r.pack(padx=5, side=tk.RIGHT)
 counter_label_left(l)
 counter_label_right(r)
 
