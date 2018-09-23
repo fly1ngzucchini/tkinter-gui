@@ -17,24 +17,33 @@ root.bind('<Escape>', lambda e: root.destroy())
 #w.pack() #tells tkinter to fit the size of the window to text
 
 counter = 0
-def count():
-    global counter
-    counter +=1
-
 def counter_label_left(label):
-    label.config(text = "target = " + str(counter))
-    label.after(1, count)
+    def count():
+        global counter
+        counter += 1
+        label.config(text = str(counter))
+        label.after(1, count)
     count()
+
 def counter_label_right(label):
-    label.config( text = "current = " + str(counter))
-    label.after(1,count)
+    def count():
+        global counter
+        counter += 1
+        label.config(text = str(counter))
+        label.after(1, count)
     count()
+
+def text(label):
+    label = tk.Label(root, fg="green")
+    label.pack(padx=50, side=tk.LEFT)
+
 root.title("proto toto type")
-label = tk.Label(root, fg="green")
-label.pack(padx=50, side=tk.LEFT)
-label = tk.Label(root, fg="green")
-label.pack()
-counter_label_left(label)
+l = tk.Label(root, fg="green")
+l.pack(padx=50, side=tk.LEFT)
+r = tk.Label(root, fg="green")
+r.pack(side=tk.LEFT)
+counter_label_left(l)
+counter_label_right(r)
 
 
 """
