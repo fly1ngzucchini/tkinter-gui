@@ -22,7 +22,7 @@ def counter_label_left(label):
         global counter
         counter += 1
         label.config(text = "Target: " + str(counter))
-        label.after(1, count)
+        label.after(1000, count)
     count()
 
 def counter_label_right(label):
@@ -30,7 +30,7 @@ def counter_label_right(label):
         global counter
         counter += 1
         label.config(text = "Current: " + str(counter))
-        label.after(1, count)
+        label.after(1000, count)
     count()
 
 def text(label):
